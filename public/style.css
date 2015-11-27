@@ -1,0 +1,84 @@
+
+html, body {
+    bgcolor: #a73737; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #a73737 , #7a2828); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #a73737 , #7a2828); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100%; 
+    font-family: 'Cousine';
+}
+
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+#invalid{
+    margin-top: 7px;
+    font-family: 'Cousine';
+    font-size: 16px;
+    color: #00DB00;
+    visibility: hidden;
+}
+
+.small-grey {
+    font-size: 18px;   
+}
+
+#username-form{
+    background-color: transparent;   
+    border: solid 5px white;
+    color: #00DB00;
+}
+
+#chat{
+    color: white;  
+    height: 100%;
+    width:100%;
+    border: solid white 10px;
+    padding-left:0px;
+    padding-right: 0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+#chat-info{
+    border-bottom: solid white 2px; 
+    padding-left:30px;
+}
+
+.messages li {
+    text-decoration: none;  
+    list-style-type: none;
+    word-wrap: break-word;
+    width:100%;
+}
+
+
+#chat-body{
+    width: 100%;
+	height:400px;
+	overflow-y: scroll;
+    padding-left:0px;
+    padding-right: 0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.input-message{
+    border: 10px solid white;
+    bottom: 0px;
+    height: 60px;
+    left: 0px;
+    outline: medium none;
+    position:fixed;
+	bottom:0;
+    right: 0;
+    width: 100%;
+	resize: none;
+	margin: auto;
+    background-color: transparent; 
+}
