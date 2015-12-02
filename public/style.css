@@ -82,3 +82,15 @@ html, body {
 	margin: auto;
     background-color: transparent; 
 }
+
+.notification {
+    width:200px; 
+    margin-right:50px; 
+    padding-left:5px; 
+    height:40px; 
+    background-color: white; 
+    right:0;
+    top:-15px;
+    position:absolute; 
+    margin-left: 800px;
+}

@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta descript="description" content="blurb. Just making [some] noise on the internet.">
     <meta name="author" content="Khalil Stemmler">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
     <link href='https://fonts.googleapis.com/css?family=Cousine' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
@@ -32,7 +34,15 @@
     </div>
     <div id="chat" class="container" style="display: none;">
         <div class="row">
-            <div class="col-md-12" id="chat-info"></div>
+            <div class="col-md-12" id="chat-info">
+            </div>
+            <div style="float:right; margin-right:20px;">
+                <a id="sound" href="javascript:void(0);"><img src="images/sound.png" style="width:20px; float:right; position:relative; top:-18px;" /></a>
+            </div>
+            <div class="notification" style="width:200px; margin-right:50px; padding-left:5px; height:20px; background-color: white; right:0;position:absolute; margin-left: 800px;">
+                <a id="sound-notification">Sound is now off!</a></div>
+
+
         </div>
 
         <div id="chat-body" class="container mCustomScrollbar" data-mcs-theme="dark">
@@ -49,7 +59,7 @@
                     wHeight = wHeight - 108;
                     $chatArea.css("height", "" + wHeight + "px");
                 };
-                
+
                 resizeChat();
 
                 //Continuous Resize
@@ -61,7 +71,7 @@
             });
         </script>
         <textarea id="chatbox" rows="1" wrap="hard" class="input-message" type="text" placeholder="Say something nice!"></textarea>
-        
+
     </div>
 
 
