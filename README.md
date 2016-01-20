@@ -12,4 +12,4 @@ Every night, a log of who has connected and who disconnected is logged to a uniq
 
 I thought of using some of the newer available tools to send a text message to myself anytime someone joins but I can see my friends exploiting this; perhaps set something like a "cooldown timer" for the frequency of messages being sent to my phone within a period of time.
 
-Anyways, I was initially running this off of a NATed Linux Server in my home but I'm thinking of finally paying for proper Heroku hosting.
+Anyways, I was initially running this off of a Port Forwarded Linux Server in my home but I'm thinking of finally paying for proper Heroku hosting.
