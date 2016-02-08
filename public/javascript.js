@@ -3,13 +3,13 @@ $(document).ready(function() {
     var socket;
     var location = window.location;
     console.log(location);
-    if(location = "http://localhost:3000/") {
+    if(location === "http://localhost:3000/") {
         socket = io("http://localhost:3000");
     } else {
         socket = io.connect();
     }
     
-    var randomColors = ['#0092CC', '#A000CC', '#FCFCFC', '#000000', '#00D188'];
+    var randomColors = ['#0092CC', '#A000CC', '#00D188', '#CEBBB4', '#3A5795', '#5B1647', '#2B7A9B', '#359936', '#8E6035'];
     var myRandomColor = randomColors[Math.round(Math.random() * randomColors.length)];
     
     var $usernameForm = $('#username-form');
