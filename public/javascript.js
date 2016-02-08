@@ -1,5 +1,6 @@
 $(function () {
-    var socket = io('https://floating-bastion-98876.herokuapp.com:3000/');
+    //var socket = io('https://floating-bastion-98876.herokuapp.com:3000/');
+    var socket = io.connect();
     var $usernameForm = $('#username-form');
     var $numberOfUsersDisplay = $('#chat-info');
     var $chatMessages = $('.messages');
