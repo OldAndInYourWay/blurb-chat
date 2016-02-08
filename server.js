@@ -96,7 +96,7 @@ var log = function(text){
     global.stream.write(text + "\n");
 };
 
-/***********************************************************************
+/*****************************************************************T******
  * SOCKET HANDLING
  ************************************************************************/
 
@@ -160,8 +160,8 @@ io.on('connection', function(socket){
                 numUsers--;
             }
 
-            var personWhoLeft = socket.username  + "";
-            if(personWhoLeft== undefined){
+            var personWhoLeft = socket.username;
+            if(personWhoLeft === undefined){
                 personWhoLeft = "Someone who didn't get far enough to get a name ";
                 log(personWhoLeft + " left.");
             }
