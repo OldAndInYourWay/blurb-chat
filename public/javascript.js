@@ -9,7 +9,7 @@ $(document).ready(function() {
         socket = io.connect();
     }
     
-    var randomColors = ['#0092CC', '#A000CC', '#00D188', '#CEBBB4', '#3A5795', '#5B1647', '#2B7A9B', '#359936', '#8E6035'];
+    var randomColors = ['#0092CC', '#66ff66', '#00D188', '#c199ff', '#3A5795', '#8dd88d', '#2B7A9B', '#359936', '#8E6035', '#d17ad1'];
     var myRandomColor = randomColors[Math.round(Math.random() * randomColors.length)];
     
     var $usernameForm = $('#username-form');
