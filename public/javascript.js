@@ -1,5 +1,17 @@
-$(function () {
-    var socket = io('http://localhost:3000/');
+$(document).ready(function() {
+    //var socket = io('https://floating-bastion-98876.herokuapp.com:3000/');
+    var socket;
+    var location = window.location;
+    console.log(location);
+    if(location = "http://localhost:3000/") {
+        socket = io("http://localhost:3000");
+    } else {
+        socket = io.connect();
+    }
+    
+    var randomColors = ['#0092CC', '#A000CC', '#FCFCFC', '#000000', '#00D188'];
+    var myRandomColor = randomColors[Math.round(Math.random() * randomColors.length)];
+    
     var $usernameForm = $('#username-form');
     var $numberOfUsersDisplay = $('#chat-info');
     var $chatMessages = $('.messages');
@@ -167,6 +179,7 @@ $(function () {
 
     socket.on('message', function (data) {
         var message = data.message;
+        var color = data.color;
         var user = data.username;
 
         if (!isActive) {
@@ -177,7 +190,7 @@ $(function () {
             document.title = windowtitle = "blurb - " + user + " just sent a message!";
         }
 
-        $chatMessages.append("<li>" + sanitize(data.username) + ": " + message + "</li>");
+        $chatMessages.append("<li style='color:" + color + ";'>" + sanitize(data.username) + ": " + message + "</li>");
         goToBottom();
     });
 
@@ -194,9 +207,10 @@ $(function () {
                 $("#chatbox").val("");
 
                 socket.emit('message', {
-                    message: text
+                    message: text,
+                    color: myRandomColor
                 });
-                $chatMessages.append("<li>" + sanitize(username) + ": " + sanitize(text) + "</li>");
+                $chatMessages.append("<li style='color:" + myRandomColor + ";'>" + sanitize(username) + ": " + sanitize(text) + "</li>");
                 goToBottom();
 
             }

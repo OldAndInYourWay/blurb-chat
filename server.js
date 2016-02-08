@@ -3,8 +3,7 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-var ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + "/public"));
 
@@ -97,7 +96,7 @@ var log = function(text){
     global.stream.write(text + "\n");
 };
 
-/***********************************************************************
+/*****************************************************************T******
  * SOCKET HANDLING
  ************************************************************************/
 
@@ -161,8 +160,8 @@ io.on('connection', function(socket){
                 numUsers--;
             }
 
-            var personWhoLeft = socket.username  + "";
-            if(personWhoLeft== undefined){
+            var personWhoLeft = socket.username;
+            if(personWhoLeft === undefined){
                 personWhoLeft = "Someone who didn't get far enough to get a name ";
                 log(personWhoLeft + " left.");
             }
@@ -178,12 +177,14 @@ io.on('connection', function(socket){
 
         socket.on('message', function(data){
            var message = data.message;
+           var color = data.color;
 
             //Escape bad text
             message = message.replace(/</g, "&lt;").replace(/>/g, "&gt;");
             socket.broadcast.emit('message', {
                username: socket.username,
-               message: message
+               message: message,
+               color: color
            });
 
             log(socket.username + ": " + data.message);
