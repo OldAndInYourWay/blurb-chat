@@ -1,6 +1,8 @@
 # blurb-chat
 Node.js + Express + Socket.IO chat app
 
+![animation](https://cloud.githubusercontent.com/assets/6892666/13548389/4547056e-e2bd-11e5-89bc-901a69326c72.gif)
+
 http://chat.khalilstemmler.com
 
 blurb chat is a quick little chat application that I put together using Express and Socket.IO. 
